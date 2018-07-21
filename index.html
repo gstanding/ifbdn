@@ -5,14 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Conference</title>
+    <title>IFBDN 2018</title>
     <link rel="Bookmark" href="images/1.png">
     <link rel="shortcut icon" href="images/1.png" />
-    <!-- css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
-    <!--<link rel="stylesheet" href="assets/css/table_style.css">-->
 </head>
 <body data-spy="scroll" data-target="#site-nav">
     <nav id="site-nav" class="navbar navbar-fixed-top navbar-custom">
@@ -85,10 +83,6 @@
                     <p>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brain dysfunction ranges from complete loss of consciousness to disorientation and an inability to pay attention. The interventions focusing on defining the extent of brain damage and its precise location and exploring personalized neuromodulation technologies are of prime importance. Combining engineering with medical biological sciences to promote health care treatment, including diagnosis, monitoring, and therapy has grown exponentially in recent years. Such as the develop on the neuroimaging technologies and the use of invasive and especially non-invasive neuromodulation.
                     </p>
-					<!-- 
-                    <figure>
-                        <img alt="" class="img-responsive" src="assets/images/about-us.jpg">
-                    </figure> -->
                     <h3 class="section-title multiple-title">The Theme of this FORUM</h3>
                     <p>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>The main theme of the 3rd International forum on brain dysfunction and neuromodulation (IFBDN) --bridging the gap between doctors and bioengineers, is to meet clinical needs with advanced engineering technologies establishing the integrity brain network and neuro-modulating for brain dysfunction. </strong>
@@ -110,15 +104,6 @@
                     <figure>
                         <img alt="" class="img-responsive" src="http://op72m4y17.bkt.clouddn.com/about.png">
                     </figure> 
-                    <!-- <ul class="list-arrow-right">
-
-                        <li>Learn from the best Asian Social Media Experts &amp; Case Studies</li>
-                        <li>Have dedicated 2-to-1 meetings with the experts</li>
-                        <li>Reach more consumers for less by learning new digital media skills</li>
-                        <li>Save money when spending in online advertising</li>
-                    
-                    </ul> -->
-
                 </div><!-- /.col-sm-6 -->
             </div><!-- /.row -->
         </div><!-- /.container -->
@@ -215,9 +200,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="section-title">Register for free</h3>
+                    <h3 class="section-title">Register</h3>
                 </div>
-                <p><b>Note:</b>If you want to participate the forum for free, you can just fill out the form below. Or if you pay for the forum, you can fill out the form <b>PAY FOR THE FORUM</b> and you may have three privileges:</p>
+                <p><b>Note:</b>If you want to participate the forum for free, you can just fill out the form below. And if you pay for the forum, you should fill out the form <b>PAY FOR THE FORUM</b> and you may have three privileges:</p>
                 <ul>
                 	<li>Your paper will be published in the proceedings, and can be recommended to SCI 1/2 part journals</li>
                 	<li>You will enjoy the discounted price of the conference partner hotel</li>
@@ -225,7 +210,11 @@
                 </ul>
                 <br>
             </div>
-                
+            <div class="row">
+	            <div class="col-md-12" id="registration-msg" style="display:none;">
+	                <div class="alert"></div>
+	            </div>   
+	        </div>
             <form id="registration-form">
                 <div class="row">
                     <div class="col-md-12" id="registration-msg" style="display:none;">
@@ -233,7 +222,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Name" id="name" name="name" required>
+                            <input type="text" class="form-control" placeholder="Name" id="name" name="name" maxlength="10" required>
                         </div>
 
                         <div class="form-group">
@@ -244,7 +233,7 @@
 
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Phone" id="phone" name="phone" required>
+                            <input type="tel" class="form-control" placeholder="Phone(number limited)" id="phone" onkeyup="value=value.replace(/[^\d]/g,'')"  maxlength="15" name="phone" required>
                         </div>
 
                         <div class="form-group">
@@ -268,7 +257,7 @@
                     <button type="submit" class="btn btn-black" id="registration-submit-btn">Register for free</button>
                 </div>
             </form>
-            <h1 style="text-align: center;">Or</h1>
+            <!--<h1 style="text-align: center;">Or</h1>-->
             <div class="row">
             	<br>
                 <div class="col-md-12">
@@ -278,65 +267,31 @@
                 <ul>
                 	<li>You should fill the form after your paper being accepted</li>
                 	<li>You should pay for the forum by bank transfer</li>
-                	<li>You should upload the bank transfer credentials in the form below</li>
+                	<li>You should upload the bank transfer credentials in the form below (format:pdf, <b>Please name the file with your name</b>)</li>
                 </ul>
                 <br>
             </div>
 
-            <!--<form id="registration-form-vip">
-                <div class="row">
-                    <div class="col-md-12" id="registration-msg-vip" style="display:none;">
-                        <div class="alert"></div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Name" id="name_vip" name="name_vip" required>
-                        </div>
-
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email" id="email_vip" name="email_vip" required>
-                        </div>
-
-                    </div>
-
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Phone" id="phone_vip" name="phone_vip" pattern="^\w{6,10}$" required>
-                        </div>
-
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Organization" id="organization_vip" name="phone_vip" required>
-                        </div>
-
-                    </div>
-
-                    
-	                <div class="col-md-12">
-	                    <div class="form-group">
-	                        <input type="text" class="form-control" placeholder="Address" id="address_vip" name="address_vip" required>
-	                    </div>
-
-	                    <div class="form-group">
-	                        <input type="text" class="form-control" placeholder="Paper_title" id="paper_title" name="paper_title">
-	                    </div>
-	                </div>
-	            </div>    
-                <div class="text-center mt20">
-                    <button type="submit" class="btn btn-black" id="registration-submit-btn">Pay for the forum</button>
-                </div>
-            </form>-->
-            <form action="http://172.20.15.169:9999/upload" method="post" enctype="multipart/form-data">
-	            <div class="col-sm-9">
-		            <div class="form-group">
-		                <input type="file" class="form-control" placeholder="upload your file" id="file" name="pdf" required>
+            <div class="row">
+	            <div class="col-md-12" id="upload-msg" style="display:none;">
+	                <div class="alert"></div>
+	            </div>   
+	        </div>
+	        <form id="upload-form"  enctype="multipart/form-data">
+	           	<div class="row">
+		            <div class="col-sm-9">
+			            <div class="form-group">
+			                <input type="file" class="form-control" placeholder="upload your file" id="file" name="pdf" required>
+			            </div>
+		            </div>	
+		            <div class="col-sm-3">
+		                <div class="form-group text-center">
+		                    <button type="submit" class="btn btn-black" style='margin-top: 8px'>upload</button>
+		                </div>  
 		            </div>
-	            </div>	
-	            <div class="col-sm-3">
-	                <div class="form-group text-center">
-	                    <button class="btn btn-black" style='margin-top: 8px'>upload</button>
-	                </div>  
-	            </div>
-	        </form>
+		        </div>
+		    </form>
+	    	
 
         </div>
     </section>
@@ -352,8 +307,7 @@
                     	<li style="text-align:  left;">Papers related to</li>
                     	<li style="text-align:  left;">Papers related to</li>
                     </ol>
-                    <p>All papers must be original and should be submitted in pdf format via the EasyChair website:&nbsp;&nbsp;&nbsp;<a href="http://easychair.org/conferences/?conf=the3rdifbdn" target="_blank" style="
-    color:  white;text-decoration: underline;">http://easychair.org/conferences/?conf=the3rdifbdn</a></p>
+                    <p>All papers must be original and should be submitted in pdf format via the EasyChair website:&nbsp;&nbsp;&nbsp;<a href="http://easychair.org/conferences/?conf=the3rdifbdn" target="_blank" style="color:  white;text-decoration: underline;">http://easychair.org/conferences/?conf=the3rdifbdn</a></p>
     				<p><b>Note:</b> What do you need to konw about paper submission:</p>
     				<ol>
                     	<li style="text-align:  left;">You need to creat an EasyChair Account and log in it(or log in your account directly if you have one)</li>
@@ -361,9 +315,6 @@
                     	<li style="text-align:  left;">You can see the status of your papers in your own EasyChair system</li>
                     	<li style="text-align:  left;">You need to pay the registration fee after your paper being accepted</li>
                     </ol>
-
-
-                    <!--<a class="btn btn-white" href="https://easychair.org/cfp/the-3rd-ifbdn" target="_blank">Submit</a>-->
                 </div>
             </div>
         </div>
@@ -509,38 +460,10 @@
     </footer>
 
     <!-- script -->
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="bower_components/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/smooth-scroll.min.js"></script>
     <script src="assets/js/main.js"></script>
-    <!--<script type="text/javascript">
-    	function upload() {
-    		//window.alert(5 + 6);
-    		var token = parent.window.document.getElementById("token").value;   
-    		var formData = new FormData();
-    		formData.append("token", token);
-    		formData.append("file", $('#file')[0].files[0]);
-    		//var formData = new FormData($("#file")[0]);
-    		window.alert(formData);
-    		$.ajax({
-        		async : flase,
-       			cache : flase,
-        		type : "post",
-        		data : formData,
-        		url : 'http://100.100.1.114:9999/upload',
-        		dataType : 'json',
-        		contentType: false, //必须
-        		processData: false, //必须
-        		success : function() {
-            		console.log('success');
-            		//window.alert(5 + 6);
-        		},
-        		error : function(arg1, arg2, arg3) {
-            		console.log(arg1 + "--" + arg2 + "--" + arg3);
-            		//window.alert(5 + 5);
-        		}
-    		});
-		}
-    </script>-->
+ 
 </body>
 </html>

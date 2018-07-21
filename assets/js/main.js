@@ -28,24 +28,68 @@ function handleTopNavAnimation() {
 $('#registration-form').submit(function(e){
     e.preventDefault();
     
+
+    //window.alert(5 + 6);
     var postForm = { //Fetch form data
-            'fname'     : $('#registration-form #fname').val(),
-            'lname'     : $('#registration-form #lname').val(),
+            'name'     : $('#registration-form #name').val(),
+            'phone'      : $('#registration-form #phone').val(),
             'email'     : $('#registration-form #email').val(),
-            'cell'      : $('#registration-form #cell').val(),
+            'organization'       : $('#registration-form #organization').val(),
             'address'   : $('#registration-form #address').val(),
-            'zip'       : $('#registration-form #zip').val(),
-            'city'      : $('#registration-form #city').val(),
-            'program'   : $('#registration-form #program').val()
+            'title'     : $('#registration-form #paper_title').val()
     };
+    /*var pattern = new RegExp("[~'!@#$%^&*()-+_=:]");  
+    var pattern_ = new RegExp("[~'!#$%^&*()-+_=:]");  
+    if($("#name").val() != "" && $("#name").val() != null){  
+        if(pattern.test($("#name").val())){  
+            alert("非法字符！");  
+            $("#name").attr("value","");  
+            $("#name").focus();  
+            return false;  
+        }  
+    }  
+    if($("#organization").val() != "" && $("#organization").val() != null){  
+        if(pattern.test($("#organization").val())){  
+            alert("非法字符！");  
+            $("#organization").attr("value","");  
+            $("#organization").focus();  
+            return false;  
+        }  
+    }  
+    if($("#address").val() != "" && $("#address").val() != null){  
+        if(pattern.test($("#address").val())){  
+            alert("非法字符！");  
+            $("#address").attr("value","");  
+            $("#address").focus();  
+            return false;  
+        }  
+    }  
+    if($("#paper_title").val() != "" && $("#paper_title").val() != null){  
+        if(pattern.test($("#paper_title").val())){  
+            alert("非法字符！");  
+            $("#paper_title").attr("value","");  
+            $("#paper_title").focus();  
+            return false;  
+        }  
+    }  
+    if($("#email").val() != "" && $("#email").val() != null){  
+        if(pattern_.test($("#email").val())){  
+            alert("非法字符！");  
+            $("#email").attr("value","");  
+            $("#email").focus();  
+            return false;  
+        }  
+    }*/
 
     $.ajax({
             type      : 'POST',
-            url       : './assets/php/contact.php',
+            url       : 'http://120.79.3.161:8888/register',
             data      : postForm,
             dataType  : 'json',
             success   : function(data) {
+                            //onsole.log(res)
                             if (data.success) {
+                                $('#registration-form').hide();
                                 $('#registration-msg .alert').html("Registration Successful");
                                 $('#registration-msg .alert').removeClass("alert-danger");
                                 $('#registration-msg .alert').addClass("alert-success");
@@ -53,15 +97,53 @@ $('#registration-form').submit(function(e){
                             }
                             else
                             {
+                                $('#registration-form').show();
                                 $('#registration-msg .alert').html("Registration Failed");
                                 $('#registration-msg .alert').removeClass("alert-success");
                                 $('#registration-msg .alert').addClass("alert-danger");
                                 $('#registration-msg').show();
                             }
-                        }
+                        },
+            error       :function(res) {
+                            console.log(res)
+                        },
         });
 });
-
+$('#upload-form').submit(function(e){
+    e.preventDefault();
+    //window.alert('hi');
+    var formData = new FormData($('#upload-form')[0]);
+    window.alert
+    //formData.append("file", $('#upload-form #file').files[0]); 
+    //formData.append("token", token_value); // 其他参数按这样子加入
+    //window.alert(formData)
+    $.ajax({
+           url: "http://120.79.3.161:8888/upload",
+           data: formData,
+           type: "POST",
+           dataType: 'json',
+           cache: false,//上传文件无需缓存
+           processData: false,//用于对data参数进行序列化处理 这里必须false
+           contentType: false, //必须
+           success: function (data) {
+               if (data.success) {
+                    $('#upload-form').hide();
+                    $('#upload-msg .alert').html("Upload Successful");
+                    $('#upload-msg .alert').removeClass("alert-danger");
+                    $('#upload-msg .alert').addClass("alert-success");
+                    $('#upload-msg').show();
+                }
+                else
+                {
+                    $('#upload-form').show();
+                    $('#upload-msg .alert').html("Registration Failed");
+                    $('#upload-msg .alert').removeClass("alert-success");
+                    $('#upload-msg .alert').addClass("alert-danger");
+                    $('#upload-msg').show();
+                }
+           }
+    });
+});
 /*
  * SmoothScroll
 */
