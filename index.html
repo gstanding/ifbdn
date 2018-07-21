@@ -226,7 +226,7 @@
                 <br>
             </div>
                 
-            <form action="#" id="registration-form">
+            <form id="registration-form">
                 <div class="row">
                     <div class="col-md-12" id="registration-msg" style="display:none;">
                         <div class="alert"></div>
@@ -257,8 +257,12 @@
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Address" id="address" name="address" required>
                         </div>
+                        <div class="form-group">
+	                        <input type="text" class="form-control" placeholder="Paper_title" id="paper_title" name="paper_title">
+	                    </div>
 
                     </div>
+
                 </div>
                 <div class="text-center mt20">
                     <button type="submit" class="btn btn-black" id="registration-submit-btn">Register for free</button>
@@ -279,9 +283,9 @@
                 <br>
             </div>
 
-            <form action="#" id="registration-form">
+            <!--<form id="registration-form-vip">
                 <div class="row">
-                    <div class="col-md-12" id="registration-msg" style="display:none;">
+                    <div class="col-md-12" id="registration-msg-vip" style="display:none;">
                         <div class="alert"></div>
                     </div>
                     <div class="col-sm-6">
@@ -297,7 +301,7 @@
 
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Phone" id="phone_vip" name="phone_vip" required>
+                            <input type="text" class="form-control" placeholder="Phone" id="phone_vip" name="phone_vip" pattern="^\w{6,10}$" required>
                         </div>
 
                         <div class="form-group">
@@ -305,30 +309,38 @@
                         </div>
 
                     </div>
-                    <div class="col-md-12">
 
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Address" id="address_vip" name="address_vip" required>
-                        </div>
+                    
+	                <div class="col-md-12">
+	                    <div class="form-group">
+	                        <input type="text" class="form-control" placeholder="Address" id="address_vip" name="address_vip" required>
+	                    </div>
 
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Paper_title" id="paper_title" name="paper_title" required>
-                        </div>
-
-                        <div class="form-group">
-                            <input type="file" class="form-control" placeholder="upload your file" id="file" name="file" required>
-                        </div>
-
-                    </div>
-                </div>
+	                    <div class="form-group">
+	                        <input type="text" class="form-control" placeholder="Paper_title" id="paper_title" name="paper_title">
+	                    </div>
+	                </div>
+	            </div>    
                 <div class="text-center mt20">
                     <button type="submit" class="btn btn-black" id="registration-submit-btn">Pay for the forum</button>
                 </div>
-            </form>
+            </form>-->
+            <form action="http://172.20.15.169:9999/upload" method="post" enctype="multipart/form-data">
+	            <div class="col-sm-9">
+		            <div class="form-group">
+		                <input type="file" class="form-control" placeholder="upload your file" id="file" name="pdf" required>
+		            </div>
+	            </div>	
+	            <div class="col-sm-3">
+	                <div class="form-group text-center">
+	                    <button class="btn btn-black" style='margin-top: 8px'>upload</button>
+	                </div>  
+	            </div>
+	        </form>
 
         </div>
     </section>
-
+    
     <section id="contribution" class="section contribution" style="background-color: rgba(0,0,0,0.7);">
         <div class="container">
             <div class="row">
@@ -491,12 +503,6 @@
             <div class="row">
                 <div class="col-md-12">
                         <p class="site-info">Copyright © 2018 <a href="http://www.siat.cas.cn/" target="_blank" title="SIAT">Shenzhen Institutes of Advanced Technology Chinese Academy of Sciences</a>. All rights reserved. </p>
-                    <!-- <ul class="social-block">
-                        <li><a href=""><i class="ion-social-twitter"></i></a></li>
-                        <li><a href=""><i class="ion-social-facebook"></i></a></li>
-                        <li><a href=""><i class="ion-social-linkedin-outline"></i></a></li>
-                        <li><a href=""><i class="ion-social-googleplus"></i></a></li>
-                    </ul> -->
                 </div>
             </div>
         </div>
@@ -507,5 +513,34 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <!--<script type="text/javascript">
+    	function upload() {
+    		//window.alert(5 + 6);
+    		var token = parent.window.document.getElementById("token").value;   
+    		var formData = new FormData();
+    		formData.append("token", token);
+    		formData.append("file", $('#file')[0].files[0]);
+    		//var formData = new FormData($("#file")[0]);
+    		window.alert(formData);
+    		$.ajax({
+        		async : flase,
+       			cache : flase,
+        		type : "post",
+        		data : formData,
+        		url : 'http://100.100.1.114:9999/upload',
+        		dataType : 'json',
+        		contentType: false, //必须
+        		processData: false, //必须
+        		success : function() {
+            		console.log('success');
+            		//window.alert(5 + 6);
+        		},
+        		error : function(arg1, arg2, arg3) {
+            		console.log(arg1 + "--" + arg2 + "--" + arg3);
+            		//window.alert(5 + 5);
+        		}
+    		});
+		}
+    </script>-->
 </body>
 </html>
