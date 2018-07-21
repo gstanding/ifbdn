@@ -113,10 +113,7 @@ $('#upload-form').submit(function(e){
     e.preventDefault();
     //window.alert('hi');
     var formData = new FormData($('#upload-form')[0]);
-    window.alert
-    //formData.append("file", $('#upload-form #file').files[0]); 
-    //formData.append("token", token_value); // 其他参数按这样子加入
-    //window.alert(formData)
+    $("#uploading-msg").html('文件上传中，请等待...');
     $.ajax({
            url: "http://120.79.3.161:8888/upload",
            data: formData,
@@ -128,6 +125,7 @@ $('#upload-form').submit(function(e){
            success: function (data) {
                if (data.success) {
                     $('#upload-form').hide();
+                    $("#uploading-msg").hide();
                     $('#upload-msg .alert').html("Upload Successful");
                     $('#upload-msg .alert').removeClass("alert-danger");
                     $('#upload-msg .alert').addClass("alert-success");
